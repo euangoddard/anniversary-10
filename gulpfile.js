@@ -9,7 +9,7 @@ var $ = require('gulp-load-plugins')();
 
 
 var CONFIG = {
-  is_release: !!argv.release
+  is_release: !!argv.release || process.argv[2] === 'gh-pages'
 };
 
 var reload = browserSync.reload;
@@ -73,3 +73,7 @@ gulp.task('serve', ['default'], function () {
 
 
 gulp.task('default', ['build']);
+
+gulp.task('gh-pages', ['build'], function () {
+  return gulp.src('./dist/**/*').pipe($.ghPages());
+});
