@@ -1,0 +1,41 @@
+@import "typebase";
+@import "material";
+
+html {
+    color: material-color(grey, 900);
+}
+
+body {
+    padding-bottom: 2rem;
+}
+
+hr {
+    border-top: 1px dashed $material-color-divider;
+}
+
+a {
+    color: material-color(pink, 500);
+    transition: color 0.2s ease-in-out;
+
+    sup & {
+        text-decoration: none;
+    }
+
+    &:hover,
+    &:focus {
+        color: material-color(pink, 300);
+    }
+}
+
+.container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding-bottom: 0.5rem;
+}
+
+iframe {
+    display: block;
+    border: 0;
+    margin: 1rem auto;
+    max-width: 100%;
+}
